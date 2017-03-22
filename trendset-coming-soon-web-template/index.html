@@ -1,0 +1,123 @@
+<!--
+Author: WebThemez
+Author URL: http://webthemez.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+Note: Please use our back link in your site (webthemez.com)
+-->
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]--> 
+<!--[if IE 7 ]>	<html lang="en" class="ie ie7"> <![endif]--> 
+<!--[if IE 8 ]>	<html lang="en" class="ie ie8"> <![endif]--> 
+<!--[if IE 9 ]>	<html lang="en" class="ie ie9"> <![endif]--> 
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Songhees Tours- Coming Soon!!!</title>
+
+<meta name="description" content="Trendset Page under construction">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body id="home">
+<div id="Header">
+	<div class="wrapper">
+		<h1>Songhees Cultural Tours</h1>	
+	</div>
+</div>
+<div id="Content" class="wrapper"> 
+<div class="countdown styled"></div> 
+<h2 class="intro">Our website is under construction. Stay tuned for something amazing!<br><br>
+<a href="https://www.eaglewingtours.com/tours-rates/songhees-first-nation-cultural-wildlife-tour/">In the meantime click here to check out our tours</a><br><br>
+<img src="https://s-media-cache-ak0.pinimg.com/originals/96/25/d2/9625d232fe0517268df82393157f299f.png" alt="Songhees Nation Logo" align="middle"></h2>
+
+<!-- <img src="https://s-media-cache-ak0.pinimg.com/originals/96/25/d2/9625d232fe0517268df82393157f299f.png" alt="Songhees Nation Logo" align="middle"> -->
+
+<div id="subscribe"> 
+	<!-- <form action="" method="post" onsubmit="">
+		<p><input name="" value="Enter your e-mail" type="text" id=""/>
+		<input type="button" value="Submit"/></p>
+	</form> -->
+	<div id="socialIcons">
+		<ul> 
+			<li><a href="https://twitter.com/songhees_nation" title="Twitter" class="twitterIcon"></a></li>
+			<li><a href="https://www.facebook.com/SongheesWellnessCentre/" title="facebook" class="facebookIcon"></a></li>
+			<!-- <li><a href="" title="linkedIn" class="linkedInIcon"></a></li>
+			<li><a href="" title="Pintrest" class="pintrestIcon"></a></li> -->
+		</ul>
+	</div>
+</div>
+
+<span class="tempBy">Template by: <a href="http://webthemez.com" alt="webthemez" id="footer">WebThemez.com</a></span>
+</div>
+
+<div id="overlay"></div>
+
+<!--Scripts-->
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/Backstretch.js"></script>
+<script type="text/javascript" src="js/jquery.countdown.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+	        var endDate = "June 7, 2087 15:03:25";
+	        $('.countdown.simple').countdown({ date: endDate });
+	        $('.countdown.styled').countdown({
+	          date: endDate,
+	          render: function(data) {
+	            $(this.el).html("<div>" + this.leadingZeros(data.years, 4) + " <span>years</span></div><div>" + this.leadingZeros(data.days, 3) + " <span>days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>hrs</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>min</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>sec</span></div>");
+	          }
+	        });
+	        $('.countdown.callback').countdown({
+	          date: +(new Date) + 10000,
+	          render: function(data) {
+	            $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+	          },
+	          onEnd: function() {
+	            $(this.el).addClass('ended');
+	          }
+	        }).on("click", function() {
+	          $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+	        });
+	        // End time for diff purposes
+	        var endTimeDiff = new Date().getTime() + 15000;
+	        // This is server's time
+	        var timeThere = new Date();
+	        // This is client's time (delayed)
+	        var timeHere = new Date(timeThere.getTime() - 5434);
+	        // Get the difference between client time and server time
+	        var diff_ms = timeHere.getTime() - timeThere.getTime();
+	        // Get the rounded difference in seconds
+	        var diff_s = diff_ms / 1000 | 0;
+	        
+	        var notice = [];
+	        notice.push('Server time: ' + timeThere.toDateString() + ' ' + timeThere.toTimeString());
+	        notice.push('Your time: ' + timeHere.toDateString() + ' ' + timeHere.toTimeString());
+	        notice.push('Time difference: ' + diff_s + ' seconds (' + diff_ms + ' milliseconds to be precise). Your time is a bit behind.');
+	        
+	        $('.offset-notice').html(notice.join('<br />'));
+	        
+	        $('.offset-server .countdown').countdown({
+	          date: endTimeDiff,
+	          offset: diff_s * 1000,
+	          onEnd: function() {
+	            $(this.el).addClass('ended');
+	          }
+	        });
+	        
+	        $('.offset-client .countdown').countdown({
+	          date: endTimeDiff,
+	          onEnd: function() {
+	            $(this.el).addClass('ended');
+	          }
+	        });
+	      });
+</script>
+
+</body>
+</html>
